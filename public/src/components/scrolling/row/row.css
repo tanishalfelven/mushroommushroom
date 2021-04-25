@@ -1,0 +1,38 @@
+.row {
+    display: flex;
+}
+
+.animgroup {
+    --from: 0%;
+    --to: 100%;
+
+    display: inline-flex;
+
+    animation-name: slideRight;
+    animation-timing-function: linear;
+    animation-duration: 20000ms;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+.mush {
+    --rotate: 0deg;
+
+    display: inline-block;
+
+    vertical-align: middle;
+
+    transition: transform 100ms;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.mush:hover {
+    transform: scale(2) rotate(var(--rotate));
+}
+
+@keyframes slideRight {
+    from { transform: translateX(var(--from)); }
+    to   { transform: translateX(var(--to)); }
+}
